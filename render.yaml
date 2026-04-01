@@ -1,0 +1,19 @@
+services:
+  - type: worker
+      name: bot-vuelos-cdmx
+          runtime: python
+              buildCommand: pip install -r requirements.txt
+                  startCommand: python main.py
+                      envVars:
+                            - key: TELEGRAM_BOT_TOKEN
+                                    sync: false
+                                          - key: TELEGRAM_CHANNEL_ID
+                                                  sync: false
+                                                        - key: TRAVELPAYOUTS_TOKEN
+                                                                sync: false
+                                                                      - key: TRAVELPAYOUTS_MARKER
+                                                                              sync: false
+                                                                                    - key: MAX_PRICE_USD
+                                                                                            value: "250"
+                                                                                                  - key: CHECK_INTERVAL_HOURS
+                                                                                                          value: "4"
